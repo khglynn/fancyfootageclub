@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "jekyll",
+  "installCommand": "bundle config set --local path vendor/bundle && bundle install",
+  "buildCommand": "bundle exec jekyll build",
+  "outputDirectory": "_site",
+  "rewrites": [
+    { "source": "/library/2015/03/usflag/", "destination": "/library/2015/03/USflag/index.html" }
+  ]
+}
