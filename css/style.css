@@ -24,9 +24,8 @@ body {
 	height: 100vh;
 	padding: 2em;
 	margin: 0 auto;
-	background: url("../assets/img/bg-circle.png") center no-repeat;
-	background: url("../assets/img/bg-circle.svg") center no-repeat;
-	background-size: cover;
+	/* A bg-circle.png/.svg background sat here; the image was never committed and is gone,
+	   so the container is left transparent over the background video. */
 }
 
 img{

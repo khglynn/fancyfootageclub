@@ -1,3 +1,7 @@
+---
+# Front matter only so Liquid fills in site.asseturl. Hosts serve this page at any
+# unknown path, so every URL in it is root-absolute.
+---
 <!DOCTYPE html>
 <html>
 
@@ -7,28 +11,25 @@
 
  	<title>Oops! Nothing's here... - Fancy Footage Club</title>
 
- 	<link rel="stylesheet" href="https://s3.amazonaws.com/fancyfootage.club/css/normalize.css"/>
- 	<link rel="stylesheet" href="https://s3.amazonaws.com/fancyfootage.club/css/style.css"/>
- 	<link rel="stylesheet" href="https://s3.amazonaws.com/fancyfootage.club/css/bigvideo.css">
+ 	<link rel="stylesheet" href="/css/style.css"/>
 
-    <script src="https://s3.amazonaws.com/fancyfootage.club/js/modernizr-2.5.3.min.js"></script>
  	<script src="//use.typekit.net/vzk4zqq.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 
-	<!-- FAVICONS -->
-	<link rel="icon" type="image/x-icon" href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/favicon2.ico" />
-	<link rel="icon" type="image/png" href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/Favicon2.png" />
-	<link rel="icon" type="image/gif" href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/favicon-animated3.gif" />
-	<link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-144.png" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png" />
-    <link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-114.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png" />
-    <link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-72.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png" />
+	{% include favicons.html %}
 </head>
 
 <body>
+	<!-- Full-screen background loop (css/style.css styles bare video elements). The 404's own clip,
+	     ffc-404.mp4, went with the deleted fancyfootage.club bucket, so this plays the homepage loop. -->
+	<video autoplay muted loop playsinline poster="{{ site.asseturl }}img/home-poster.jpg">
+		<source src="{{ site.asseturl }}vid/home.mp4" type="video/mp4">
+		<source src="{{ site.asseturl }}vid/home.webm" type="video/webm">
+	</video>
 
 	<div class='container'>
 		<header>
-			<img src="https://s3.amazonaws.com/fancyfootage.club/assets/img/logo.png" alt="Fancy Footage Club Logo" class="header__logo">
+			<img src="/assets/img/logo.png" alt="Fancy Footage Club Logo" class="header__logo">
 		</header>
 
 		<main>
@@ -37,11 +38,11 @@
 					404
 				</h1>
 				<h2>
-					There doesn't seem to be anything here. Have this fancy clip instead!
+					There doesn't seem to be anything here.
 				</h2>
 			</div>
 
-			<a href="https://s3.amazonaws.com/fancyfootage.club/assets/vid/ffc-404.mp4" class="button">Download Clip</a>
+			<a href="/#library" class="button">Browse the library</a>
 
 		</main>
 
@@ -73,23 +74,6 @@
 			</div>
 		</footer>
 	</div>
-
-	<!-- BigVideo Dependencies -->
-    <script src="https://s3.amazonaws.com/fancyfootage.club/js/jquery-1.8.1.min.js"></script>
-    <script src="https://s3.amazonaws.com/fancyfootage.club/js/jquery-ui-1.8.22.custom.min.js"></script>
-    <script src="js/jquery.imagesloaded.min.js"></script>
-    <script src="http://vjs.zencdn.net/c/video.js"></script>
-    <script src="https://s3.amazonaws.com/fancyfootage.club/js/bigvideo.js"></script>
-
-    <script>
-        var BV = new $.BigVideo();
-		BV.init();
-		if (Modernizr.touch) {
-		    BV.show('https://s3.amazonaws.com/fancyfootage.club/assets/img/ffc-poster-404.jpg');
-		} else {
-		    BV.show('https://s3.amazonaws.com/fancyfootage.club/assets/vid/ffc-404.mp4',{ambient:true});
-		}
-    </script>
 </body>
 
 </html>

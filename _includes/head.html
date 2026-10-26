@@ -22,10 +22,5 @@
 
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
-	<!-- FAVICONS -->
-	<link rel="icon" type="image/x-icon" href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/favicon2.ico" />
-	<link rel="icon" type="image/gif" href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/favicon-animated3.gif" />
-	<link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-144.gif" rel="apple-touch-icon-precomposed" sizes="144x144" type="image/png" />
-    <link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-114.gif" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png" />
-    <link href="https://s3.amazonaws.com/fancyfootage.club/assets/img/favions/apple-touch-icon-72.gif" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png" />
+	{% include favicons.html %}
 </head>
