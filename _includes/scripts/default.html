@@ -13,8 +13,12 @@
 	      body.setAttribute("class","no-bg");
 	      html.setAttribute("style",posterStyle);
 	      bg.removeChild(vid);
+	  } else if (vid.paused) {
+	      // Only nudge the video we kept. play() returns a promise that rejects when the
+	      // browser refuses autoplay (e.g. Low Power Mode); the poster shows either way.
+	      var playing = vid.play();
+	      if (playing && playing.catch) { playing.catch(function(){}); }
 	  }
-	  if(vid.paused){vid.play();}
 	});
 </script>
 <script>
@@ -55,7 +59,11 @@
 		console.log('Connection error');
 	};
 
-	request.send();
+	// Only the homepage has the "Show More Loops" button; elsewhere (about, help)
+	// there is nothing to load into, and onload would throw on the missing button.
+	if (loadTrigger) {
+		request.send();
+	}
 
 	function createItem(data, parent){
 		var newItem = document.createElement('li'),
@@ -71,7 +79,6 @@
 		itemLink.href = data.url;
 		itemLink.target = "_blank"
 		itemImg.src = "{{ site.asseturl }}img/" + data.filename + "-small.jpg";
-		itemImg.onload = console.log('loaded');
 		itemP.innerHTML = "by " + data.name;
 
 		newItem.appendChild(itemLink);
