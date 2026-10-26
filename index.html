@@ -27,14 +27,14 @@ announcement: true
 						{% capture filename %}{{ post.date | date: "%Y-%m-%d" }}-{{ post.loop }}{% endcapture %}
 						{% if post.url %}
 							{% if post.is_ad != true %}
-							<li class="collection__item" onclick="ga('send', 'event', 'clip', 'click', '{{ filename }}');">
+							<li class="collection__item">
 								<a href="{{ post.url }}" target="_blank">
 				  					<img src="{{ site.asseturl }}img/{{ filename }}-small.jpg">
 				  					<p>by {{ site.data.contributors[post.contributor].name }}</p>
 				 				</a>
 							</li>
 							{% else %}
-							<li class="collection__item ad" onclick="ga('send', 'event', 'ad', 'click', '{{ filename }}');">
+							<li class="collection__item ad">
 								<a href="{{ post.ad_url }}" target="_blank">
 				  					<img src="{{ site.asseturl }}img/{{ filename }}-small.jpg">
 				  					<p>by {{ site.data.sponsors[post.sponsor].name }}</p>

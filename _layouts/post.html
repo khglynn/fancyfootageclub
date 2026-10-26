@@ -75,11 +75,11 @@ layout: default
 	</section><!-- end .preview__loop -->
 	<section class="preview__download">
 		{% if page.is_ad == true %}
-			<a class="button button-muted" href="{{ page.ad_url }}" onclick="ga('send', 'event', 'ad', 'click', '{{ sponsor.name }}');" target="_blank">
+			<a class="button button-muted" href="{{ page.ad_url }}" target="_blank">
 				{{ page.cta_text }}
 			</a>
 		{% else %}
-			<a class="button button-muted" href="{{ site.dlurl }}{{ filename }}.zip" onclick="ga('send', 'event', 'loop', 'dl', 'dl-{{ filename }}');" download>
+			<a class="button button-muted" href="{{ site.dlurl }}{{ filename }}.zip" download>
 				Download Loop
 			</a>
 			<p>Free download available on desktop</p>

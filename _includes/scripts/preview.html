@@ -42,25 +42,21 @@
     if (e.keyCode == '37') {
        // left arrow
       if(prevLink != ''){
-        ga('send', 'event', 'link', 'key', 'prev');
         window.location.href = prevLink;
       }
     }
     else if (e.keyCode == '39') {
        // right arrow
       if(nextLink != ''){
-        ga('send', 'event', 'link', 'key', 'next');
         window.location.href = nextLink;
       }
     }
     else if (e.keyCode == '40') {
       // down arrow
-      ga('send', 'event', 'loop', 'dl', 'dl-{{ filename }}');
       window.location.href = downloadLink;
     }
     else if (e.keyCode == '38') {
       // up arrow
-      ga('send', 'event', 'link', 'key', 'library');
       window.location.href = '/#library';
     }
   }
