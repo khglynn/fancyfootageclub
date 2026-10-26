@@ -18,8 +18,8 @@
 </head>
 
 <body>
-	<!-- Full-screen background loop (css/style.css styles bare video elements). Was BigVideo + jQuery
-	     from paths that no longer exist. There is no thankyou.webm in the media bucket, so mp4 only. -->
+	{% comment %}Full-screen background loop (css/style.css styles bare video elements). Was BigVideo + jQuery
+	     from paths that no longer exist. There is no thankyou.webm in the media bucket, so mp4 only.{% endcomment %}
 	<video autoplay muted loop playsinline poster="/assets/img/thankyou-poster.jpg">
 		<source src="{{ site.asseturl }}vid/thankyou.mp4" type="video/mp4">
 	</video>

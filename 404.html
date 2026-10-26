@@ -20,8 +20,8 @@
 </head>
 
 <body>
-	<!-- Full-screen background loop (css/style.css styles bare video elements). The 404's own clip,
-	     ffc-404.mp4, went with the deleted fancyfootage.club bucket, so this plays the homepage loop. -->
+	{% comment %}Full-screen background loop (css/style.css styles bare video elements). The 404's own clip,
+	     ffc-404.mp4, went with the deleted fancyfootage.club bucket, so this plays the homepage loop.{% endcomment %}
 	<video autoplay muted loop playsinline poster="{{ site.asseturl }}img/home-poster.jpg">
 		<source src="{{ site.asseturl }}vid/home.mp4" type="video/mp4">
 		<source src="{{ site.asseturl }}vid/home.webm" type="video/webm">
