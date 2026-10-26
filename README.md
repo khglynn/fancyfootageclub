@@ -24,7 +24,7 @@ it has been deleted, so those pages were already broken. The
 fancyfootage.club domain expired on 2026-10-18 and was not renewed. The
 footage was copied from S3 to R2 key-for-key (272 objects), so only the two
 base URLs changed. Everything the deleted bucket served now comes from this
-repo or the R2 bucket, and the site's contact address is kevin@trimm.co.
+repo or the R2 bucket, and the site's contact address is ffc@trimm.co (an alias on Kevin's mailbox).
 
 Three Vercel notes, all in `vercel.json`:
 
