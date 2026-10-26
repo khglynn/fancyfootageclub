@@ -10,7 +10,7 @@
 		{% else %}
 			"name": "{{ site.data.sponsors[post.sponsor].name }}",
 			"is_ad": true,
-			"url": "{{ post.ad_url }}",
+			"url": "{{ post.ad_url | default: post.url }}",
 		{% endif %}
 		"filename": "{{ filename }}",
 		"category": "{{ post.category }}" 

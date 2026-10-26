@@ -75,9 +75,11 @@ layout: default
 	</section><!-- end .preview__loop -->
 	<section class="preview__download">
 		{% if page.is_ad == true %}
+			{% if page.ad_url %}
 			<a class="button button-muted" href="{{ page.ad_url }}" target="_blank">
 				{{ page.cta_text }}
 			</a>
+			{% endif %}
 		{% else %}
 			<a class="button button-muted" href="{{ site.dlurl }}{{ filename }}.zip" download>
 				Download Loop
@@ -125,12 +127,22 @@ layout: default
 	<section class="preview__artist">
 		{% if page.is_ad == true %}
 			<h1>
+				{% if page.ad_url %}
 				<p><a class="artist-name" href="{{ page.ad_url }}" target="_blank">{{ sponsor.name }}</a></p>
+				{% else %}
+				<p><a class="artist-name">{{ sponsor.name }}</a></p>
+				{% endif %}
 			</h1>
 		{% else %}
 			<h1>
 				<span class="by-line">Loop by</span>
+				{% if contributor.email and contributor.email != '#' %}
 				<a class="artist-name" href="mailto:{{contributor.email}}">{{ contributor.name }}</a>
+				{% elsif contributor.url %}
+				<a class="artist-name" href="{{ contributor.url }}" target="_blank">{{ contributor.name }}</a>
+				{% else %}
+				<a class="artist-name">{{ contributor.name }}</a>
+				{% endif %}
 			</h1>
 			<ul class="link-list --icons">
 				{% if contributor.twitter %}
@@ -148,7 +160,7 @@ layout: default
 					<i class="fa fa-globe"></i>
 				</a></li>
 				{% endif %}
-				{% if contributor.email %}
+				{% if contributor.email and contributor.email != '#' %}
 				<li class="link-list__item"><a href="mailto:{{contributor.email}}">
 					<i class="fa fa-at"></i>
 				</a></li>
