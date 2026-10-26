@@ -1,6 +1,6 @@
 # Site settings
 title: Fancy Footage Club
-email: kevin@trimm.co
+email: ffc@trimm.co
 description: 'Cinema-quality footage for creative projects of every size'
 baseurl: ""
 # Footage lives in Kevin HG's Cloudflare R2 bucket since 2026-10, copied key-for-key
