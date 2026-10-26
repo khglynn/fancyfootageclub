@@ -1,10 +1,12 @@
 # Site settings
 title: Fancy Footage Club
-email: admin@fancyfootage.club
+email: kevin@trimm.co
 description: 'Cinema-quality footage for creative projects of every size'
 baseurl: ""
-dlurl: "https://s3.amazonaws.com/fancyfootageclips/loops/"
-asseturl: "https://s3.amazonaws.com/fancyfootageclips/website/"
+# Footage lives in Kevin HG's Cloudflare R2 bucket since 2026-10, copied key-for-key
+# from the original S3 bucket `fancyfootageclips` (loops/... and website/...).
+dlurl: "https://media.ffc.kevinhg.com/loops/"
+asseturl: "https://media.ffc.kevinhg.com/website/"
 url: "" 
 
 exclude: ['css/src', 'package.json', '/node_modules', 'gruntfile.js', 'npm-debug.log']
